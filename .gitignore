@@ -38,4 +38,7 @@ Thumbs.db
 
 # Project specific #
 ####################
-simpleimage.png
+sampleimage.png
+.settings
+.classpath
+.project
