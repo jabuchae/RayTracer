@@ -68,27 +68,27 @@ public class Box implements Shape {
 		Point normal = new Point(0,0,0);
 		
 		if(point.getX() == this.min.getX()){
-			normal.add(new Point(-1,0,0));
+			normal = normal.add(new Point(-1,0,0));
 		}
 		
 		if(point.getX() == this.max.getX()){
-			normal.add(new Point(1,0,0));
+			normal = normal.add(new Point(1,0,0));
 		}
 		
 		if(point.getY() == this.min.getY()){
-			normal.add(new Point(0,-1,0));
+			normal = normal.add(new Point(0,-1,0));
 		}
 		
 		if(point.getY() == this.max.getY()){
-			normal.add(new Point(0,1,0));
+			normal = normal.add(new Point(0,1,0));
 		}
 		
 		if(point.getZ() == this.min.getZ()){
-			normal.add(new Point(0,0,-1));
+			normal = normal.add(new Point(0,0,-1));
 		}
 		
 		if(point.getZ() == this.max.getZ()){
-			normal.add(new Point(0,0,1));
+			normal = normal.add(new Point(0,0,1));
 		}
 		
 		return normal.normalize();
