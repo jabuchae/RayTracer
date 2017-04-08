@@ -1,7 +1,5 @@
 package spatial3d.light;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import raytracer.image.Colour;
 
@@ -28,5 +26,15 @@ public class Luminescence {
 		}
 		
 		return new Luminescence(this.getColour().add(lum.getColour()), this.getBrightness() + lum.getBrightness());
+	}
+
+	public Luminescence reflect(Colour sufraceColour) {
+		Colour c = new Colour(
+			Math.min(sufraceColour.getRed(), this.colour.getRed()),
+			Math.min(sufraceColour.getGreen(), this.colour.getGreen()),
+			Math.min(sufraceColour.getBlue(), this.colour.getBlue())
+		);
+		
+		return new Luminescence(c, this.brightness);
 	}
 }

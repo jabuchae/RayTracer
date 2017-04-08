@@ -6,6 +6,7 @@ import raytracer.Scene;
 import raytracer.image.Colour;
 import raytracer.image.Image;
 import spatial3d.Point;
+import spatial3d.light.AmbientLight;
 import spatial3d.light.Light;
 import spatial3d.light.OmniLight;
 import spatial3d.shape.Plane;
@@ -69,10 +70,11 @@ public class TracerMain {
 			plane2 = new Plane(new Point(0,0,-1), new Point(0,0,1), new Colour(100, 0, 0));
 			scene.addShape(plane2);
 			
-			Light light;
-			light = new OmniLight(new Point(20,10,10), new Colour(255,255,255), 0.5);
+			Light light = new OmniLight(new Point(20,10,10), new Colour(255,255,255), 1);
 			scene.addLight(light);
-			
+		
+			Light ambientLight = new AmbientLight(new Colour(255,255,255), 0.8);
+			scene.addLight(ambientLight);
 			
 			return;
 		}

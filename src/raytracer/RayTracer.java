@@ -75,7 +75,7 @@ public class RayTracer {
 				return Colour.BLACK;
 			}
 			
-			return total_lum.getColour().add(colour);
+			return total_lum.reflect(colour).getColour();
 		}
 }
 

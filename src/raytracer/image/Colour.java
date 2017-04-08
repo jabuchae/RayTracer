@@ -56,4 +56,16 @@ public class Colour {
 		
 		return this;
 	}
+
+	public int getRed() {
+		return this.red;
+	}
+	
+	public int getGreen() {
+		return this.green;
+	}
+	
+	public int getBlue() {
+		return this.blue;
+	}
 }
