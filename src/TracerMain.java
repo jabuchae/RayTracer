@@ -48,7 +48,7 @@ public class TracerMain {
 		}
 
 		private static void placeCamera(Camera camera) {
-			camera.place(new Point(10,0,3));
+			camera.place(new Point(20,10,6));
 			camera.lookAt(new Point(0,0,0));
 			camera.setTop(new Point(0,0,1));
 			camera.fov(Math.PI/4);
@@ -79,11 +79,12 @@ public class TracerMain {
 			
 			
 			
-			Light light = new OmniLight(new Point(20,10,10), new Colour(255,255,255), 1);
+			Light light = new OmniLight(new Point(4,4,4), new Colour(255,255,255), 0.7);
 			scene.addLight(light);
 		
 			Light ambientLight = new AmbientLight(new Colour(255,255,255), 0.8);
 			scene.addLight(ambientLight);
+			
 			
 			return;
 		}
