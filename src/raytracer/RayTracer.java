@@ -13,18 +13,28 @@ public class RayTracer {
 
 		private Scene scene;
 		private Camera camera;
+		private int smooth;
 		
 		public RayTracer(Scene scene, Camera camera) {
 		
 			this.scene = scene;
 			this.camera = camera;
 			
+			this.smooth = 1;
+			
+		}
+		
+		public void setSmooth(int smooth){
+			this.smooth = smooth;
 		}
 
 		public Image buildImage() {
 			
-			int xresolution = this.camera.getXResolution();
-			int yresolution = this.camera.getYResolution();
+			int xresolution = this.camera.getXResolution()*this.smooth;
+			int yresolution = this.camera.getYResolution()*this.smooth;
+
+			this.camera.setResolution(xresolution, yresolution);
+			
 			
 			Image image = new Image(xresolution, yresolution);
 			
@@ -37,6 +47,8 @@ public class RayTracer {
 					
 				}
 			}
+			
+			image.smooth(this.smooth);
 			
 			return image;
 		

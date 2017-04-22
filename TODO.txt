@@ -1,0 +1,15 @@
+Shaders
+- Implement glass
+- Implement mirror
+
+Textures
+- Implement image based textures
+
+Speed optimizations
+- Implement oct-tree for the scene
+- Implement oct-tree for meshes
+- Implement AABB for all shapes
+- Implement threads
+
+Visual optimizations
+- Implement multi-point lights

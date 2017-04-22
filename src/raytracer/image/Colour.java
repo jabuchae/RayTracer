@@ -10,14 +10,19 @@ public class Colour {
 		this.red = red;
 		this.green = green;
 		this.blue = blue;
+		
+	}
+	
+	public Colour(int argb) {
+
+		this.red = 0xFF & ( argb >> 16);
+		this.green = 0xFF & (argb >> 8 );
+		this.blue = 0xFF & (argb >> 0 );
+		
 	}
 
 	public int getRGB() {
-		int rgb = this.red;
-		rgb = (rgb << 8) + this.green;
-		rgb = (rgb << 8) + this.blue;
-		
-		return rgb;
+		return (this.red << 16 ) | (this.green<<8) | this.blue;
 	}
 	
 	@Override
@@ -36,10 +41,14 @@ public class Colour {
 
 	public Colour add(Colour colour) {
 		
+		if(colour == null){
+			return this;
+		}
+		
 		return new Colour(
-			this.red + colour.red,
-			this.green + colour.green,
-			this.blue + colour.blue
+			(int) Math.sqrt((this.red*this.red + colour.red*colour.red) / 2),
+			(int) Math.sqrt((this.green*this.green + colour.green*colour.green) / 2),
+			(int) Math.sqrt((this.blue*this.blue + colour.blue*colour.blue) / 2)
 		).normalize();
 	}
 	

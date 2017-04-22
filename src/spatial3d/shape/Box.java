@@ -7,8 +7,8 @@ import spatial3d.Point;
 
 public class Box implements Shape {
 
-	private Point min;
-	private Point max;
+	protected Point min;
+	protected Point max;
 	private Colour colour;
 	
 	public Box(Point min, Point max, Colour colour) {
